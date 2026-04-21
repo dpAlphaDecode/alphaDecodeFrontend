@@ -19,7 +19,7 @@ export const useStockData = () => {
       setLoading(true);
 
       try {
-        const res = await axios.get("http://127.0.0.1:8000/rating", {
+        const res = await axios.get("https://api.alphadecode.com/rating", {
           params: { skip: offset, limit: PAGE_SIZE },
         });
 
