@@ -39,7 +39,7 @@ const RatingsFilterPopover = ({ onFilterChange }) => {
   return (
     <Popover>
       <PopoverTrigger className="flex items-center bg-white border border-gray-300 rounded-md px-3 py-1.5 text-sm font-medium hover:bg-gray-50 focus:outline-none">
-        Ratings filters <ChevronDown className="ml-1 h-4 w-4" />
+        AlphaDecode Rating <ChevronDown className="ml-1 h-4 w-4" />
       </PopoverTrigger>
 
       <PopoverContent className="w-[420px] p-4 bg-white rounded-xl shadow-lg z-[9999] space-y-4">
