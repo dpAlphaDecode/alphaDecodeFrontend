@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 
 const FilterBar = () => {
   return (
-    <div className="flex items-center overflow-visible gap-2 p-2  rounded-lg bg-white">
+    <div className="flex items-center overflow-visble gap-2 p-2  rounded-lg bg-white">
     
     <Box
   sx={{
@@ -22,17 +22,16 @@ const FilterBar = () => {
 >
 
 </Box>
-      <DropdownFilter label="Analyst rating" />
+      <DropdownFilter label="Ratings" />
+      <DropdownFilter label="Analyst Rating" />
+      <DropdownFilter label="Marketcap Range" />
       <RatingsFilterPopover />
       <DropdownFilter label="Change %" />
-      <DropdownFilter label="Sector" />
-      <DropdownFilter label="Industry" />
-      <DropdownFilter label="MarketCap" />
       <DropdownFilter label="PE" />
       <DropdownFilter label="PB" />
-      <DropdownFilter label="PEG" />
-      <DropdownFilter label="Div Yeld" />
-      <DropdownFilter label="Debt/equity" />
+      <DropdownFilter label="Div yield" />
+      <DropdownFilter label="Debt/equity ratio" />
+      <DropdownFilter label="Price change %" />
     </div>
   );
 };

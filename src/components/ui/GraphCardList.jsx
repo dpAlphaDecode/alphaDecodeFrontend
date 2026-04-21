@@ -30,7 +30,7 @@ import "swiper/css/pagination";
 const GraphCardList = () => {
   const [isVisibleGraph, setIsVisibleGraph] = useState(false);
   const theme = useTheme();
-
+  
   // Responsive breakpoints using MUI theme
   const isXsScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isSmScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
@@ -109,6 +109,7 @@ const GraphCardList = () => {
     <Paper
       elevation={1}
       sx={{
+        
         overflow: 'hidden',
         backgroundColor: 'background.paper',
       }}
