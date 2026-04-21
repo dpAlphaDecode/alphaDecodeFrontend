@@ -227,7 +227,7 @@ export const createColumns = (
     field: "symbol",
     width: 300,
     pinned: "left",
-    sortable: false,
+    sortable: true,
     disableColumnMenu: true,
     align: "left",
     headerAlign: "left",
@@ -256,7 +256,7 @@ export const createColumns = (
   {
     field: "priceRating",
     width: 80,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
     renderHeader: () => (
       <HeaderWithHover main="Price" sub="Rating" fieldName="priceRating" />
@@ -279,7 +279,7 @@ export const createColumns = (
   {
     field: "smrRating",
     width: 60,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
     align: "right",
     renderHeader: () => (
@@ -290,7 +290,7 @@ export const createColumns = (
   {
     field: "instBuying",
     width: 100,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
     align: "right",
     renderHeader: () => (
@@ -305,7 +305,7 @@ export const createColumns = (
   {
     field: "sectorPriceRating",
     width: 90,
-    sortable: false,
+    sortable: true,
     disableColumnMenu: true,
     renderHeader: () => (
       <HeaderWithHover
@@ -327,7 +327,7 @@ export const createColumns = (
     field: "sector",
     headerName: "Sector",
     width: 160,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
   },
   {
@@ -340,7 +340,7 @@ export const createColumns = (
   {
     field: "marketCap",
     width: 140,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
     renderHeader: () => (
       <HeaderWithHover
@@ -357,7 +357,7 @@ export const createColumns = (
     field: "price",
     width: 130,
     minWidth: 120,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
     renderHeader: () => (
       <HeaderWithHover
@@ -374,7 +374,7 @@ export const createColumns = (
     field: "todayVol",
     width: 200,
     minWidth: 180,
-    sortable: false, // Enable sorting
+    sortable: true, // Enable sorting
     disableColumnMenu: true,
     renderHeader: () => (
       <HeaderWithHover
@@ -394,7 +394,7 @@ export const createColumns = (
   type: "number",
   align: "right",
   headerAlign: "right",
-  sortable: false,
+  sortable: true,
   disableColumnMenu: true,
   renderCell: ({ row }) => <PECell row={row} />,
 },
@@ -405,7 +405,7 @@ export const createColumns = (
   type: "number",
   align: "right",
   headerAlign: "right",
-  sortable: false,
+  sortable: true,
   disableColumnMenu: true,
   renderCell: ({ row }) => <PBCell row={row} />,
 },
@@ -416,7 +416,7 @@ export const createColumns = (
   type: "number",
   align: "right",
   headerAlign: "right",
-  sortable: false,
+  sortable: true,
   disableColumnMenu: true,
   renderCell: ({ row }) => <PEGCell row={row} />,
 },
@@ -437,7 +437,7 @@ export const createColumns = (
     renderHeader: () => (
       <HeaderWithHover main="Debt/equity" sub="FQ" fieldName="DebtEq" />
     ),
-    sortable: false,
+    sortable: true,
     disableColumnMenu: true,
     align: "right",
   headerAlign: "right",

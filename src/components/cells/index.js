@@ -169,7 +169,6 @@ export const PriceCell = ({ row }) => {
     ? (price - last) / last
     : null;
 
-    console.log("chgPct chgPct ",chgPct,price,last)
 
   return (
     <Typography
@@ -236,19 +235,19 @@ export const DivYieldCell = ({ row }) => {
     row.metrics?.divYield ??
     null;
 
-  const n = Number(raw);
+  const value = Number(raw);
   // Heuristic: if it's > 1.5, assume already in % (e.g., 3.2) and convert to fraction
-  const frac = Number.isFinite(n) ? (n > 1.5 ? n / 100 : n) : null;
+  // const frac = Number.isFinite(n) ? (n > 1.5 ? n / 100 : n) : null;
 
   // simple coloring: <2% = neutral, 2–8% = green, >8% = red (possible trap)
   const color =
-    frac == null
+    !Number.isFinite(value)
       ? "#999"
-      : frac >= 0.08
-      ? "#c62828"
-      : frac >= 0.02
-      ? "#2e7d32"
-      : "#ff8f00";
+      : value >= 8
+      ? "#c62828" // high (possible trap)
+      : value >= 2
+      ? "#2e7d32" // healthy
+      : "#ff8f00"; // low
 
   return (
     <Typography
@@ -260,9 +259,11 @@ export const DivYieldCell = ({ row }) => {
         letterSpacing: "-0.01em",
         color,
       }}
-      title={frac == null ? "—" : `${(frac * 100).toFixed(2)}%`}
+      title={
+        !Number.isFinite(value) ? "—" : `${value.toFixed(2)}%`
+      }
     >
-      {frac == null ? "—" : fmtPct(frac)}
+      {!Number.isFinite(value) ? "—" : `${value.toFixed(2)}%`}
     </Typography>
   );
 };

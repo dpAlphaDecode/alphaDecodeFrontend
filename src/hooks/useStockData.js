@@ -4,7 +4,7 @@ import { capBucket } from "../components/utils/formatters"; // ← ADD THIS IMPO
 
 export const useStockData = () => {
   const fetchingRef = useRef(false);
-  const PAGE_SIZE = 100;
+  const PAGE_SIZE = 5000;
 
   const [total, setTotal] = useState(null);
   const [rowsRaw, setRowsRaw] = useState([]);
@@ -19,7 +19,7 @@ export const useStockData = () => {
       setLoading(true);
 
       try {
-        const res = await axios.get("https://api.alphadecode.com/rating", {
+        const res = await axios.get("http://127.0.0.1:8000/rating", {
           params: { skip: offset, limit: PAGE_SIZE },
         });
 
@@ -35,7 +35,7 @@ export const useStockData = () => {
         fetchingRef.current = false;
       }
     },
-    [hasMore]
+    []
   );
 
   const handleRowsScrollEnd = useCallback(() => {
@@ -179,8 +179,7 @@ export const useProcessedStockData = (rowsRaw, changePct, symbolQuery) => {
       smrRating,
       instBuying,
       sectorPriceRating,
-
-        combineScore: Math.round(combineScore), // round like your sheet
+      combineScore: Math.round(combineScore), // round like your sheet
       };
     });
 
